@@ -23,7 +23,7 @@ class MyCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    
+
     public func configureWithModel(with model : Model){
         self.myLabel.text = model.text
         self.myImageView.image = UIImage(named: model.imageName)
