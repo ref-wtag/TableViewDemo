@@ -11,56 +11,60 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet var table : UITableView!
     
+    var models = [Model]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.register(FieldTableViewCell.nib(),forCellReuseIdentifier:FieldTableViewCell.identifier)
-        table.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier)
+        
+        models.append(Model(text: "First", imageName: "Image_1"))
+        models.append(Model(text: "Second", imageName: "Image_2"))
+        models.append(Model(text: "Third", imageName: "Image_3"))
+        models.append(Model(text: "Fourth", imageName: "Image_4"))
+        
+        models.append(Model(text: "First", imageName: "Image_1"))
+        models.append(Model(text: "Second", imageName: "Image_2"))
+        models.append(Model(text: "Third", imageName: "Image_3"))
+        models.append(Model(text: "Fourth", imageName: "Image_4"))
+        
+        models.append(Model(text: "First", imageName: "Image_1"))
+        models.append(Model(text: "Second", imageName: "Image_2"))
+        models.append(Model(text: "Third", imageName: "Image_3"))
+        models.append(Model(text: "Fourth", imageName: "Image_4"))
+        
+        table.register(CollectionTableViewCell.nib(), forCellReuseIdentifier: CollectionTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
     }
     
+    //Table
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+       // return models.count
+        
+        return 10
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        
-        
-        if indexPath.row > 5{
-            let customCell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier, for: indexPath) as! MyTableViewCell
-            customCell.configure(with: "Custom Cell", imageName: "gear")
-            return customCell
-        }
-        
-        if indexPath.row > 2{
-            let fieldCell = tableView.dequeueReusableCell(withIdentifier: FieldTableViewCell.identifier, for: indexPath) as! FieldTableViewCell
-            return fieldCell
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "hello world"
-        
-        let mySwitch = UISwitch()
-        mySwitch.addTarget(self, action: #selector(didChangeSwitch(_ :)), for: .valueChanged)
-        mySwitch.isOn = true
-        cell.accessoryView = mySwitch
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath)
+        as! CollectionTableViewCell
+        cell.configure(with: models)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
-    }
-    
-    @objc func didChangeSwitch(_ sender : UISwitch){
-        if sender.isOn{
-            print("User turned it on")
-        }
-        else{
-            print("its now off")
-        }
+        return 250.0
     }
 }
 
+
+struct Model{
+    let text : String
+    let imageName : String
+    
+    
+    init(text : String, imageName : String){
+        self.text = text
+        self.imageName = imageName
+    }
+}
 

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BFD020A22B0DBFCA00E10721 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD020A02B0DBFC900E10721 /* MyTableViewCell.swift */; };
-		BFD020A32B0DBFCA00E10721 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD020A12B0DBFCA00E10721 /* MyTableViewCell.xib */; };
-		BFD020A72B0DC45900E10721 /* FieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD020A52B0DC45900E10721 /* FieldTableViewCell.swift */; };
-		BFD020A82B0DC45900E10721 /* FieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD020A62B0DC45900E10721 /* FieldTableViewCell.xib */; };
+		BFD020B02B0DD22200E10721 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD020AE2B0DD22200E10721 /* CollectionTableViewCell.swift */; };
+		BFD020B12B0DD22200E10721 /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD020AF2B0DD22200E10721 /* CollectionTableViewCell.xib */; };
+		BFD020B52B0DD25000E10721 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD020B32B0DD25000E10721 /* MyCollectionViewCell.swift */; };
+		BFD020B62B0DD25000E10721 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD020B42B0DD25000E10721 /* MyCollectionViewCell.xib */; };
 		BFEE6ED02B0C5CA4006D4D48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE6ECF2B0C5CA4006D4D48 /* AppDelegate.swift */; };
 		BFEE6ED22B0C5CA4006D4D48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE6ED12B0C5CA4006D4D48 /* SceneDelegate.swift */; };
 		BFEE6ED42B0C5CA4006D4D48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE6ED32B0C5CA4006D4D48 /* ViewController.swift */; };
@@ -20,10 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BFD020A02B0DBFC900E10721 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
-		BFD020A12B0DBFCA00E10721 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
-		BFD020A52B0DC45900E10721 /* FieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldTableViewCell.swift; sourceTree = "<group>"; };
-		BFD020A62B0DC45900E10721 /* FieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldTableViewCell.xib; sourceTree = "<group>"; };
+		BFD020AE2B0DD22200E10721 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		BFD020AF2B0DD22200E10721 /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
+		BFD020B32B0DD25000E10721 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		BFD020B42B0DD25000E10721 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		BFEE6ECC2B0C5CA4006D4D48 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEE6ECF2B0C5CA4006D4D48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEE6ED12B0C5CA4006D4D48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFD020AC2B0DD1A800E10721 /* Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BFD020AE2B0DD22200E10721 /* CollectionTableViewCell.swift */,
+				BFD020AF2B0DD22200E10721 /* CollectionTableViewCell.xib */,
+			);
+			path = "Table Cell";
+			sourceTree = "<group>";
+		};
+		BFD020AD2B0DD1BD00E10721 /* Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BFD020B32B0DD25000E10721 /* MyCollectionViewCell.swift */,
+				BFD020B42B0DD25000E10721 /* MyCollectionViewCell.xib */,
+			);
+			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
 		BFEE6EC32B0C5CA4006D4D48 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +82,8 @@
 		BFEE6ECE2B0C5CA4006D4D48 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				BFD020AD2B0DD1BD00E10721 /* Collection Cell */,
+				BFD020AC2B0DD1A800E10721 /* Table Cell */,
 				BFEE6ECF2B0C5CA4006D4D48 /* AppDelegate.swift */,
 				BFEE6ED12B0C5CA4006D4D48 /* SceneDelegate.swift */,
 				BFEE6ED32B0C5CA4006D4D48 /* ViewController.swift */,
@@ -71,10 +91,6 @@
 				BFEE6ED82B0C5CA6006D4D48 /* Assets.xcassets */,
 				BFEE6EDA2B0C5CA6006D4D48 /* LaunchScreen.storyboard */,
 				BFEE6EDD2B0C5CA6006D4D48 /* Info.plist */,
-				BFD020A02B0DBFC900E10721 /* MyTableViewCell.swift */,
-				BFD020A12B0DBFCA00E10721 /* MyTableViewCell.xib */,
-				BFD020A52B0DC45900E10721 /* FieldTableViewCell.swift */,
-				BFD020A62B0DC45900E10721 /* FieldTableViewCell.xib */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -136,11 +152,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD020B62B0DD25000E10721 /* MyCollectionViewCell.xib in Resources */,
 				BFEE6EDC2B0C5CA6006D4D48 /* LaunchScreen.storyboard in Resources */,
-				BFD020A82B0DC45900E10721 /* FieldTableViewCell.xib in Resources */,
-				BFD020A32B0DBFCA00E10721 /* MyTableViewCell.xib in Resources */,
 				BFEE6ED92B0C5CA6006D4D48 /* Assets.xcassets in Resources */,
 				BFEE6ED72B0C5CA4006D4D48 /* Main.storyboard in Resources */,
+				BFD020B12B0DD22200E10721 /* CollectionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,10 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFEE6ED42B0C5CA4006D4D48 /* ViewController.swift in Sources */,
-				BFD020A22B0DBFCA00E10721 /* MyTableViewCell.swift in Sources */,
-				BFD020A72B0DC45900E10721 /* FieldTableViewCell.swift in Sources */,
+				BFD020B52B0DD25000E10721 /* MyCollectionViewCell.swift in Sources */,
 				BFEE6ED02B0C5CA4006D4D48 /* AppDelegate.swift in Sources */,
 				BFEE6ED22B0C5CA4006D4D48 /* SceneDelegate.swift in Sources */,
+				BFD020B02B0DD22200E10721 /* CollectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
