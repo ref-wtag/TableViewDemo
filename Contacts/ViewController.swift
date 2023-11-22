@@ -7,64 +7,87 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet var table : UITableView!
+    @IBOutlet var field : UITextField!
     
-    var models = [Model]()
+    var data = [String]()
+    var filteredData = [String]()
+    var filtered = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        models.append(Model(text: "First", imageName: "Image_1"))
-        models.append(Model(text: "Second", imageName: "Image_2"))
-        models.append(Model(text: "Third", imageName: "Image_3"))
-        models.append(Model(text: "Fourth", imageName: "Image_4"))
-        
-        models.append(Model(text: "First", imageName: "Image_1"))
-        models.append(Model(text: "Second", imageName: "Image_2"))
-        models.append(Model(text: "Third", imageName: "Image_3"))
-        models.append(Model(text: "Fourth", imageName: "Image_4"))
-        
-        models.append(Model(text: "First", imageName: "Image_1"))
-        models.append(Model(text: "Second", imageName: "Image_2"))
-        models.append(Model(text: "Third", imageName: "Image_3"))
-        models.append(Model(text: "Fourth", imageName: "Image_4"))
-        
-        table.register(CollectionTableViewCell.nib(), forCellReuseIdentifier: CollectionTableViewCell.identifier)
+        setUpData()
         table.delegate = self
         table.dataSource = self
+        field.delegate = self
     }
     
-    //Table
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if let text = textField.text{
+            filterText(text + string)
+        }
+        
+        return true
+    }
+    
+    func filterText(_ query : String){
+        
+        filteredData.removeAll()
+        for string in data {
+            if string.lowercased().starts(with: query.lowercased()){
+                filteredData.append(string)
+            }
+        }
+        print("\(query)")
+        table.reloadData()
+        
+        filtered = true
+    }
+    
+    func setUpData(){
+        data.append("abc")
+        data.append("def")
+        data.append("ghi")
+        data.append("jkl")
+        data.append("mno")
+        data.append("pqr")
+        data.append("str")
+        data.append("uvw")
+        data.append("wxy")
+        data.append("xyz")
+        data.append("yzeq")
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return models.count
-    
-        return 10
+        
+        if !filteredData.isEmpty{
+            return filteredData.count
+        }
+        
+        return filtered ? 0 : data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath)
-        as! CollectionTableViewCell
-        cell.configure(with: models)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if !filteredData.isEmpty{
+            cell.textLabel?.text = filteredData[indexPath.row]
+        }
+        else{
+            cell.textLabel?.text = data[indexPath.row]
+        }
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250.0
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
+   
 }
 
-
-struct Model{
-    let text : String
-    let imageName : String
-    
-    
-    init(text : String, imageName : String){
-        self.text = text
-        self.imageName = imageName
-    }
-}
 

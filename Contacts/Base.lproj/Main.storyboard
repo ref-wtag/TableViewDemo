@@ -16,32 +16,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XDi-l9-CYw">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cty-gN-NLx">
+                                <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="IRn-zp-UXf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Uge-bz-9l7">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IRn-zp-UXf" id="8c1-TE-vH0">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uge-bz-9l7" id="fPI-Gk-RLR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ntS-Y0-T6E">
+                                <rect key="frame" x="10" y="54" width="394" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Pbo-yT-Ivx"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="d70-ee-bxR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XDi-l9-CYw" secondAttribute="bottom" id="EJE-Es-eaH"/>
-                            <constraint firstItem="XDi-l9-CYw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="d1V-11-ocN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XDi-l9-CYw" secondAttribute="trailing" id="eD6-Y7-MnQ"/>
-                            <constraint firstItem="XDi-l9-CYw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ifG-CQ-qKI"/>
+                            <constraint firstItem="Cty-gN-NLx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1sZ-tW-Rxs"/>
+                            <constraint firstItem="Cty-gN-NLx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3rg-gV-u32"/>
+                            <constraint firstItem="Cty-gN-NLx" firstAttribute="top" secondItem="ntS-Y0-T6E" secondAttribute="bottom" id="Frh-1x-xh9"/>
+                            <constraint firstItem="ntS-Y0-T6E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="I2a-Hl-Tss"/>
+                            <constraint firstItem="Cty-gN-NLx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="NkI-D3-rKs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cty-gN-NLx" secondAttribute="bottom" id="WEW-f8-obT"/>
+                            <constraint firstItem="Cty-gN-NLx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XVa-sw-aH8"/>
+                            <constraint firstItem="ntS-Y0-T6E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="Z20-0d-spm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cty-gN-NLx" secondAttribute="trailing" id="avl-3t-YjH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ntS-Y0-T6E" secondAttribute="trailing" constant="10" id="eKh-02-aW3"/>
+                            <constraint firstItem="ntS-Y0-T6E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="fln-6g-Zpp"/>
+                            <constraint firstItem="Cty-gN-NLx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="k8x-re-CD3"/>
+                            <constraint firstItem="Cty-gN-NLx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kdc-C1-Up8"/>
+                            <constraint firstItem="Cty-gN-NLx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o7I-Bi-oYs"/>
+                            <constraint firstItem="Cty-gN-NLx" firstAttribute="top" secondItem="ntS-Y0-T6E" secondAttribute="bottom" constant="10" id="ooZ-5d-wMq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ntS-Y0-T6E" secondAttribute="trailing" constant="10" id="rfZ-md-F4J"/>
+                            <constraint firstItem="ntS-Y0-T6E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tHz-yf-fTA"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="table" destination="XDi-l9-CYw" id="VZ2-Tt-bdk"/>
+                        <outlet property="field" destination="ntS-Y0-T6E" id="vDV-1E-l5B"/>
+                        <outlet property="table" destination="Cty-gN-NLx" id="6uu-T5-U0T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -50,6 +73,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
