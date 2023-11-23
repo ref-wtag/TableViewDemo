@@ -7,65 +7,52 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
- 
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+   
+    @IBOutlet var table : UITableView!
+    var models = [InstragramPost]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        table.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
+        table.delegate = self
+        table.dataSource = self
+        
+        models.append(InstragramPost(numberOfLikes: 200, userName: "Refat", userImageName: "img_1", postImageName: "img_1"))
+        
+        models.append(InstragramPost(numberOfLikes: 205, userName: "Susmoy", userImageName: "img_2", postImageName: "img_2"))
+        models.append(InstragramPost(numberOfLikes: 300, userName: "Farhana", userImageName: "img_4", postImageName: "img_4"))
+        models.append(InstragramPost(numberOfLikes: 410, userName: "mitu", userImageName: "img_5", postImageName: "img_5"))
     }
     
-    @IBAction func didtapButtonOne(){
-        let vc = MyTableViewController()
-        vc.models = [
-            ("first", {
-               print("Something")
-            }),
-            ("second", {
-               print("Something2")
-            }),
-            ("third", {
-               print("Something3")
-            }),
-            ("fourth", {
-               print("Something4")
-            }),
-            ("fifth", {
-               print("Something5")
-            }),
-            ("sixth", {
-               print("Something6")
-            }),
-            
-        ]
-        navigationController?.pushViewController(vc, animated: true)
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-
-    @IBAction func didtapButtonTwo(){
-        let vc = MyTableViewController()
-        vc.models = [
-            ("BMW", {
-               print("Something")
-            }),
-            ("Corolla", {
-               print("Something2")
-            }),
-            ("Audi", {
-               print("Something3")
-            }),
-            ("Mercedes", {
-               print("Something4")
-            }),
-            ("Prado", {
-               print("Something5")
-            }),
-            ("Premio", {
-               print("Something6")
-            }),
-            
-        ]
-       
-        navigationController?.pushViewController(vc, animated: true)
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        models.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
+        cell.configure(with: models[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120+140+view.frame.size.width
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
 }
 
+struct InstragramPost{
+    let numberOfLikes : Int
+    let userName : String
+    let userImageName : String
+    let postImageName : String
+}
 
