@@ -7,87 +7,65 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ViewController: UIViewController {
 
-    @IBOutlet var table : UITableView!
-    @IBOutlet var field : UITextField!
-    
-    var data = [String]()
-    var filteredData = [String]()
-    var filtered = false
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpData()
-        table.delegate = self
-        table.dataSource = self
-        field.delegate = self
     }
     
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if let text = textField.text{
-            filterText(text + string)
-        }
-        
-        return true
+    @IBAction func didtapButtonOne(){
+        let vc = MyTableViewController()
+        vc.models = [
+            ("first", {
+               print("Something")
+            }),
+            ("second", {
+               print("Something2")
+            }),
+            ("third", {
+               print("Something3")
+            }),
+            ("fourth", {
+               print("Something4")
+            }),
+            ("fifth", {
+               print("Something5")
+            }),
+            ("sixth", {
+               print("Something6")
+            }),
+            
+        ]
+        navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func filterText(_ query : String){
-        
-        filteredData.removeAll()
-        for string in data {
-            if string.lowercased().starts(with: query.lowercased()){
-                filteredData.append(string)
-            }
-        }
-        print("\(query)")
-        table.reloadData()
-        
-        filtered = true
+
+    @IBAction func didtapButtonTwo(){
+        let vc = MyTableViewController()
+        vc.models = [
+            ("BMW", {
+               print("Something")
+            }),
+            ("Corolla", {
+               print("Something2")
+            }),
+            ("Audi", {
+               print("Something3")
+            }),
+            ("Mercedes", {
+               print("Something4")
+            }),
+            ("Prado", {
+               print("Something5")
+            }),
+            ("Premio", {
+               print("Something6")
+            }),
+            
+        ]
+       
+        navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func setUpData(){
-        data.append("abc")
-        data.append("def")
-        data.append("ghi")
-        data.append("jkl")
-        data.append("mno")
-        data.append("pqr")
-        data.append("str")
-        data.append("uvw")
-        data.append("wxy")
-        data.append("xyz")
-        data.append("yzeq")
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if !filteredData.isEmpty{
-            return filteredData.count
-        }
-        
-        return filtered ? 0 : data.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        if !filteredData.isEmpty{
-            cell.textLabel?.text = filteredData[indexPath.row]
-        }
-        else{
-            cell.textLabel?.text = data[indexPath.row]
-        }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-   
 }
 
 
